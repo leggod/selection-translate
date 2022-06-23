@@ -1,0 +1,84 @@
+{
+   "background": {
+      "scripts": [ "473.js", "150.js", "611.js", "967.js", "222.js", "697.js", "b.js" ]
+   },
+   "browser_action": {
+      "default_icon": "logo.png",
+      "default_popup": "popup.html"
+   },
+   "commands": {
+      "_execute_browser_action": {
+         "suggested_key": {
+            "default": "Ctrl+Q",
+            "mac": "MacCtrl+Q"
+         }
+      },
+      "hoverTranslate": {
+         "description": "鼠标悬浮取词"
+      },
+      "page": {
+         "description": "网页全文翻译"
+      },
+      "pageSwitchMode": {
+         "description": "切换双语 / 原文 / 译文"
+      },
+      "panel": {
+         "description": "打开独立翻译窗口",
+         "global": true,
+         "suggested_key": {
+            "default": "Ctrl+Shift+1"
+         }
+      },
+      "screenshot": {
+         "description": "截图翻译"
+      },
+      "switchWeb": {
+         "description": "切换网页划词开关"
+      },
+      "translate": {
+         "description": "翻译选中的文本",
+         "suggested_key": {
+            "default": "Alt+A"
+         }
+      },
+      "translateWithPopup": {
+         "description": "使用独立窗口翻译选中的文本",
+         "suggested_key": {
+            "default": "Alt+S"
+         }
+      }
+   },
+   "content_scripts": [ {
+      "js": [ "473.js", "150.js", "875.js", "675.js", "611.js", "229.js", "697.js", "969.js", "141.js", "99.js", "692.js", "471.js", "c.js" ],
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_end"
+   }, {
+      "all_frames": true,
+      "js": [ "473.js", "150.js", "611.js", "697.js", "969.js", "692.js", "ca.js" ],
+      "match_about_blank": true,
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_end"
+   } ],
+   "content_security_policy": "script-src 'self' 'wasm-eval'; object-src 'self'",
+   "description": "一站式划词 / 截图 / 网页全文 / 音视频翻译扩展，支持谷歌、DeepL、百度、腾讯等 8 个国内外主流翻译服务，且均可用于网页翻译。能在 PDF 里使用。",
+   "homepage_url": "https://hcfy.app",
+   "icons": {
+      "128": "logo.png",
+      "16": "logo.png",
+      "48": "logo.png"
+   },
+   "manifest_version": 2,
+   "name": "划词翻译",
+   "omnibox": {
+      "keyword": "hcfy"
+   },
+   "optional_permissions": [ "notifications", "background" ],
+   "options_ui": {
+      "open_in_tab": true,
+      "page": "settings.html"
+   },
+   "permissions": [ "\u003Call_urls>", "contextMenus", "storage", "clipboardWrite", "clipboardRead", "webRequest", "webRequestBlocking", "alarms" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "8.7.5.1",
+   "web_accessible_resources": [ "normalize.css", "cropper.css", "blueprint.css", "blueprint-select.css", "youdao.ico", "baidu.ico", "google.ico", "deepl.png", "alilogo.png", "bing.ico", "qq.ico", "sogou.ico", "xiaoyilogo.png", "logo.png", "logowhite36.png", "pdf-viewer/*", "panel.html", "473.js", "150.js", "875.js", "675.js", "697.js", "969.js", "141.js", "99.js", "125.js", "915.js", "pn.css", "pn.js" ]
+}
